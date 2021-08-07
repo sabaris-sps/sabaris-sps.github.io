@@ -1,0 +1,31 @@
+<?php
+
+	$servername="localhost";       
+	$username="root";	           
+	$password="";				   
+	$db_name="datasets";           
+	$table_name="arena";
+	
+	$conn = mysqli_connect($servername,$username,$password,$db_name); 
+
+	$query="select avg(taste) as taste from arena";
+	$result=$conn->query($query);
+	$res=$result->fetch_assoc();
+	$taste=$res['taste'];
+	
+	$query="select avg(service) as service from arena";
+	$result=$conn->query($query);
+	$res=$result->fetch_assoc();
+	$service=$res['service'];
+	
+	$query="select avg(quality) as quality from arena";
+	$result=$conn->query($query);
+	$res=$result->fetch_assoc();
+	$quality=$res['quality'];
+	
+	$query="select avg(cost) as cost from arena";
+	$result=$conn->query($query);
+	$res=$result->fetch_assoc();
+	$cost=$res['cost'];
+	
+?>
